@@ -1,7 +1,9 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
+    <Counter :num="num" @incre="increfun" @decre="decrefun"></Counter>
+    <p>parent:{{num}}</p>
+    <!-- <h2>Essential Links</h2>
     <ul>
       <li>
         <a
@@ -79,16 +81,27 @@
           awesome-vue
         </a>
       </li>
-    </ul>
+    </ul> -->
   </div>
 </template>
 
 <script>
+import Counter from './Counter'
 export default {
   name: 'HelloWorld',
+  components: {Counter},
   data () {
     return {
+      num: 10,
       msg: 'Welcome to Your Vue.js App'
+    }
+  },
+  methods: {
+    increfun () {
+      this.num++
+    },
+    decrefun () {
+      this.num--
     }
   }
 }
