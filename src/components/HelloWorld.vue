@@ -4,7 +4,7 @@
     <Counter :num="num" @incre="increfun" @decre="decrefun"></Counter>
     <p>parent:{{num}}</p>
     <router-link to="/cart">跳转到购物车页面</router-link>
-    <button @click="jump">button - 跳转到购物车页面</button>
+    <!-- <button @click="jump">button - 跳转到购物车页面</button> -->
     <!-- <h2>Essential Links</h2>
     <ul>
       <li>
@@ -104,10 +104,10 @@ export default {
     },
     decrefun () {
       this.num--
-    },
-    jump () {
-      this.$router.push({path:'/cart?cartId=001'})
     }
+    // jump () {
+    //   this.$router.push({path:'/cart?cartId=001'})
+    // }
   }
 }
 </script>
